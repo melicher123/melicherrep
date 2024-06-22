@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services>
+    <service>
+        <name>Lawn Mowing</name>
+        <details>
+            <description>Regular lawn mowing services to keep your lawn neat and tidy.</description>
+            <price>
+                <base>20</base>
+                <unit>USD</unit>
+                <frequency>per hour</frequency>
+            </price>
+        </details>
+    </service>
+    <service>
+        <name>Hedge Trimming</name>
+        <details>
+            <description>Professional hedge trimming to maintain the shape and health of your hedges.</description>
+            <price>
+                <base>30</base>
+                <unit>USD</unit>
+                <frequency>per hour</frequency>
+            </price>
+        </details>
+    </service>
+    <service>
+        <name>Garden Cleanup</name>
+        <details>
+            <description>Comprehensive garden cleanup including leaf removal and waste disposal.</description>
+            <price>
+                <base>50</base>
+                <unit>USD</unit>
+                <frequency>per session</frequency>
+            </price>
+        </details>
+    </service>
+    <service>
+        <name>Fertilization</name>
+        <details>
+            <description>Regular application of fertilizers to keep your lawn healthy and green.</description>
+            <price>
+                <base>25</base>
+                <unit>USD</unit>
+                <frequency>per application</frequency>
+            </price>
+        </details>
+    </service>
+    <service>
+        <name>Weed Control</name>
+        <details>
+            <description>Effective weed control solutions to keep your lawn weed-free.</description>
+            <price>
+                <base>35</base>
+                <unit>USD</unit>
+                <frequency>per hour</frequency>
+            </price>
+        </details>
+    </service>
+    <service>
+        <name>Aeration</name>
+        <details>
+            <description>Aeration services to improve soil health and enhance grass growth.</description>
+            <price>
+                <base>40</base>
+                <unit>USD</unit>
+                <frequency>per session</frequency>
+            </price>
+        </details>
+    </service>
+
+</services>

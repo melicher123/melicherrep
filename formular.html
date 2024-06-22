@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .error {
+          color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="home.html"><img src="gallery/logorr.png" alt="Logo" class="logo"></a>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="formular.html">form</a></li>
+            <li><a href="services.html"> Lawn Care Services</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+    <div class="background1">
+        <img src="gallery/lawnmowingcolorado.jpg" alt="lawnmowing" class="background-image">
+        <div class="form-container">
+            <div class="wrapper2">
+                <h2 class="tit">HTML Forms</h2>
+
+                <form action="connect.php" method="post">
+                <div class="form-group">
+                    <label for="fname">First name:</label><br>
+                    <input type="text" id="fname" name="fname"><br>
+                </div>
+                <div class="form-group">
+                    <label for="lname">Last name:</label><br>
+                    <input type="text" id="lname" name="lname"><br>
+                </div>
+                <div class="form-group">
+                    <label for="email">Enter your email:</label><br>
+                    <input type="email" id="email" name="email"><br>
+                </div>
+                <div class="form-group">
+                    <label for="number">Enter your tel number:</label><br>
+                    <input type="tel" id="number" name="number"><br>
+                </div>
+                <div class="form-group2">
+                    <label for="text">Gender</label>
+                    <div>
+                        <label for="male" class="radio-inline"><input type="radio" name="gender" value="m" id="male">Male</label>
+                        <label for="female" class="radio-inline"><input type="radio" name="gender" value="f" id="female">Female</label>
+                        <label for="other" class="radio-inline"><input type="radio" name="gender" value="o" id="other">Other</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Password:</label><br>
+                    <input type="password" id="pwd" name="pwd"><br><br>
+                </div>
+                    <input type="reset" value="Reset" class="btn">
+                    <input type="submit" value="Submit" class="btn">
+                </form> 
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+          let isValid = true;
+        
+          document.querySelectorAll('.error').forEach(el => el.textContent = '');
+        
+          const fname = document.getElementById('fname').value;
+          const lname = document.getElementById('lname').value;
+          const tel = document.getElementById('tel').value;
+        
+          const nameRegex = /^[A-Za-z]+$/;
+          const telRegex = /^[0-9\s]+$/;
+        
+          if (!nameRegex.test(fname)) {
+            document.getElementById('fnameError').textContent = ' First name must contain only letters.';
+            isValid = false;
+          }
+        
+          if (!nameRegex.test(lname)) {
+            document.getElementById('lnameError').textContent = ' Last name must contain only letters.';
+            isValid = false;
+          }
+        
+          if (!telRegex.test(tel)) {
+            document.getElementById('telError').textContent = ' Telephone number must contain only numbers and spaces.';
+            isValid = false;
+          }
+        
+          return isValid;
+        }
+    </script>
+    
+</body>
+</html>

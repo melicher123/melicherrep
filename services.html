@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lawn Care Services</title>
+    <link rel="stylesheet" href="css/services.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="home.html"><img src="gallery/logorr.png" alt="Logo" class="logo"></a>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="formular.html">form</a></li>
+            <li><a href="services.html"> Lawn Care Services</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+    <div class="background1">
+        <img src="gallery/lawnmowingcolorado.jpg" alt="lawnmowing" class="background-image">
+        <div class="background2">
+            <h1 class="tit">Lawn Care Services</h1>
+            <table id="servicesTable" class="tb">
+            <tr>
+                <th>Service Name</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function loadXMLDoc(url, callback) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState === 4 && this.status === 200) {
+                    callback(this);
+                }
+            };
+            xhttp.open("GET", url, true);
+            xhttp.send();
+        }
+
+        function displayServices(xml) {
+            var xmlDoc = xml.responseXML;
+            var table = document.getElementById("servicesTable");
+            var services = xmlDoc.getElementsByTagName("service");
+
+            for (var i = 0; i < services.length; i++) {
+                var row = table.insertRow();
+                var nameCell = row.insertCell(0);
+                var descriptionCell = row.insertCell(1);
+                var priceCell = row.insertCell(2);
+
+                nameCell.innerHTML = services[i].getElementsByTagName("name")[0].childNodes[0].nodeValue;
+                descriptionCell.innerHTML = services[i].getElementsByTagName("description")[0].childNodes[0].nodeValue;
+                var basePrice = services[i].getElementsByTagName("base")[0].childNodes[0].nodeValue;
+                var unit = services[i].getElementsByTagName("unit")[0].childNodes[0].nodeValue;
+                var frequency = services[i].getElementsByTagName("frequency")[0].childNodes[0].nodeValue;
+                priceCell.innerHTML = basePrice + " " + unit + " " + frequency;
+            }
+        }
+
+        loadXMLDoc("data.xml", displayServices);
+    </script>
+</body>
+</html>
